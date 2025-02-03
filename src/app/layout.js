@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import ChatWidget from "@/components/dm-overlay";
+import GoogleTagManager from "@/components/gtm/gtm";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,9 +21,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning="true">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <GoogleTagManager />
         {children}
+        <ChatWidget />
       </body>
     </html>
   );
