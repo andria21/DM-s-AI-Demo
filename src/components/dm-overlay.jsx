@@ -7,7 +7,7 @@ export default function ChatWidget() {
     const script = document.createElement("script");
     script.innerHTML = `
       window.VG_CONFIG = {
-        ID: "lbvhi8XJKf9NhgR1tNSQ",
+        ID: "iXXE9d2qJGXrST3OqDwQ",
         region: 'eu',
         render: 'bottom-right',
 
@@ -34,4 +34,5 @@ export default function ChatWidget() {
 }
 // 4tcvfdywljvitdv0 dm-bot
 
-// supta bot shm910vdzj56mily
+// SELLFIE - iXXE9d2qJGXrST3OqDwQ
+// AMBASSADORIBET - lbvhi8XJKf9NhgR1tNSQ
