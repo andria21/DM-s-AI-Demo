@@ -1,22 +1,55 @@
+// "use client";
+
+// import { useEffect } from "react";
+
+// export default function ChatWidget() {
+//   useEffect(() => {
+//     const script = document.createElement("script");
+//     script.innerHTML = `
+//       window.VG_CONFIG = {
+//         ID: "iXXE9d2qJGXrST3OqDwQ",
+//         region: 'eu',
+//         render: 'bottom-right',
+
+//         stylesheets: [
+//           "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
+//         ],
+//       }
+//     `;
+//     document.body.appendChild(script);
+
+//     const mainScript = document.createElement("script");
+//     mainScript.src =
+//       "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+//     mainScript.async = true;
+//     document.body.appendChild(mainScript);
+
+//     return () => {
+//       document.body.removeChild(script);
+//       document.body.removeChild(mainScript);
+//     };
+//   }, []);
+
+//   return <div id="VG_OVERLAY_CONTAINER" />;
+// }
 "use client";
 
 import { useEffect } from "react";
 
-export default function ChatWidget() {
+export default function ChatWidget({ id }) {
   useEffect(() => {
-    const script = document.createElement("script");
-    script.innerHTML = `
+    const configScript = document.createElement("script");
+    configScript.innerHTML = `
       window.VG_CONFIG = {
-        ID: "iXXE9d2qJGXrST3OqDwQ",
+        ID: "${id}",
         region: 'eu',
         render: 'bottom-right',
-
         stylesheets: [
           "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
         ],
       }
     `;
-    document.body.appendChild(script);
+    document.body.appendChild(configScript);
 
     const mainScript = document.createElement("script");
     mainScript.src =
@@ -25,10 +58,10 @@ export default function ChatWidget() {
     document.body.appendChild(mainScript);
 
     return () => {
-      document.body.removeChild(script);
+      document.body.removeChild(configScript);
       document.body.removeChild(mainScript);
     };
-  }, []);
+  }, [id]);
 
   return <div id="VG_OVERLAY_CONTAINER" />;
 }

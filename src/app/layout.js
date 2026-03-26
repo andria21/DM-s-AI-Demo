@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
         {/* <GoogleTagManager /> */}
         {children}
-        <ChatWidget />
+        {/* <ChatWidget /> */}
       </body>
     </html>
   );
